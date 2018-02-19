@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +29,62 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        TextView numbers = findViewById(R.id.numbers);
+        numbers.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(i);
+            }
+        });
+
+        TextView familyMembers = findViewById(R.id.family);
+        familyMembers.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(i);
+            }
+        });
+
+        TextView colors = findViewById(R.id.colors);
+        colors.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        TextView phrases = findViewById(R.id.phrases);
+        phrases.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Called when a view has been clicked.
+             *
+             * @param v The view that was clicked.
+             */
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
-    public void openNumbersList(View view) {
-        Intent i = new Intent(this, NumbersActivity.class);
-        startActivity(i);
-    }
 }
